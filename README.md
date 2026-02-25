@@ -1,2 +1,2 @@
-# kawane_kamikumi_homepage
+# kawane_kamikumi_home
 Kawane Kamigumi Home Pages 
