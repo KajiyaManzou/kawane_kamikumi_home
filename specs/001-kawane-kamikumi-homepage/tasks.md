@@ -72,10 +72,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T020 [US2] `src/index.njk` にご意見・ご要望セクションを追加する（Googleフォーム iframe 埋め込み・`config.googleFormUrl` を参照）
-- [ ] T021 [US2] `src/index.njk` のフォーム上部に個人情報取り扱い説明文（1〜2文）を追加する（「送信内容は東川根上組の活動改善にのみ使用します」等）
-- [ ] T022 [US2] フォームが読み込めない場合の代替連絡先テキストを `src/index.njk` に追加する（`<noscript>` タグまたは説明文として）
-- [ ] T023 [US2] `src/_data/config.js` の `googleFormUrl` にサンプル URL またはプレースホルダーを設定し、フォームセクションの表示を確認する
+- [x] T020 [US2] `src/index.njk` にご意見・ご要望セクションを追加する（Googleフォーム iframe 埋め込み・`config.googleFormUrl` を参照）
+- [x] T021 [US2] `src/index.njk` のフォーム上部に個人情報取り扱い説明文（1〜2文）を追加する（「送信内容は東川根上組の活動改善にのみ使用します」等）
+- [x] T022 [US2] フォームが読み込めない場合の代替連絡先テキストを `src/index.njk` に追加する（`<noscript>` タグまたは説明文として）
+- [x] T023 [US2] `src/_data/config.js` の `googleFormUrl` にサンプル URL またはプレースホルダーを設定し、フォームセクションの表示を確認する
 
 **Checkpoint**: US2 完了 — フォームセクションと個人情報説明文が正常表示される
 
