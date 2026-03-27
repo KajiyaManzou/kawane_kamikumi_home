@@ -18,11 +18,11 @@
 
 **Purpose**: Eleventy プロジェクトの構成とディレクトリ構造の確立
 
-- [ ] T001 Markdownコンテンツディレクトリを作成する `content/notices/` `content/circulars/`
-- [ ] T002 Eleventy テンプレートディレクトリを作成する `src/_includes/` `src/_data/`
-- [ ] T003 `package.json` を作成し Eleventy 依存パッケージを定義する（`@11ty/eleventy` `@11ty/eleventy-fetch` `rss-parser`）
-- [ ] T004 [P] `npm install` で依存パッケージをインストールする
-- [ ] T005 [P] `wwwroot/assets/css/` `wwwroot/assets/js/` `wwwroot/files/` ディレクトリを作成する
+- [x] T001 Markdownコンテンツディレクトリを作成する `content/notices/` `content/circulars/`
+- [x] T002 Eleventy テンプレートディレクトリを作成する `src/_includes/` `src/_data/`
+- [x] T003 `package.json` を作成し Eleventy 依存パッケージを定義する（`@11ty/eleventy` `@11ty/eleventy-fetch` `rss-parser`）
+- [x] T004 [P] `npm install` で依存パッケージをインストールする
+- [x] T005 [P] `wwwroot/assets/css/` `wwwroot/assets/js/` `wwwroot/files/` ディレクトリを作成する
 
 ---
 
