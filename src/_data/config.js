@@ -1,3 +1,3 @@
 module.exports = {
-  googleFormUrl: "https://forms.gle/gf5qFFnKgyvLbJoc7/viewform?embedded=true",
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdrmv5WxtcM960hlNI8AvGGuFeknYr7STPwFCmvcsFbTLWgxw/viewform?embedded=true",
 };
