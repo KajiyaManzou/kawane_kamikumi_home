@@ -89,10 +89,10 @@
 
 ### Implementation for User Story 3
 
-- [ ] T024 [US3] `src/_data/tokai_news.js` を作成する（`@11ty/eleventy-fetch` で `https://www.vill.tokai.ibaraki.jp/cgi-bin/feed.php?siteNew=1` をビルド時取得・`rss-parser` で XML をパース・最新5件を返す・取得失敗時は空配列を返す）
-- [ ] T025 [US3] `src/index.njk` に東海村ニュースセクションを追加する（記事タイトル・日付・外部リンク `target="_blank" rel="noopener"` で表示・最大5件）
-- [ ] T026 [US3] `src/index.njk` の東海村ニュースセクションに、データが空の場合「現在情報を取得できません」メッセージを表示する条件分岐を追加する
-- [ ] T027 [US3] ローカルでビルドし、東海村 RSS フェッチが正常に動作することを確認する（`npx eleventy --output=wwwroot` 実行後にニュース5件が表示されること）
+- [x] T024 [US3] `src/_data/tokai_news.js` を作成する（`@11ty/eleventy-fetch` で `https://www.vill.tokai.ibaraki.jp/cgi-bin/feed.php?siteNew=1` をビルド時取得・`rss-parser` で XML をパース・最新5件を返す・取得失敗時は空配列を返す）
+- [x] T025 [US3] `src/index.njk` に東海村ニュースセクションを追加する（記事タイトル・日付・外部リンク `target="_blank" rel="noopener"` で表示・最大5件）
+- [x] T026 [US3] `src/index.njk` の東海村ニュースセクションに、データが空の場合「現在情報を取得できません」メッセージを表示する条件分岐を追加する
+- [x] T027 [US3] ローカルでビルドし、東海村 RSS フェッチが正常に動作することを確認する（`npx eleventy --output=wwwroot` 実行後にニュース5件が表示されること）
 
 **Checkpoint**: US3 完了 — 東海村ニュース5件または取得失敗メッセージが表示される
 
@@ -102,7 +102,7 @@
 
 **Purpose**: 全ストーリー横断の品質確認とデプロイ自動化
 
-- [ ] T028 [P] `.github/workflows/daily-deploy.yml` を作成する（UTC 21:00 = JST 6:00 の cron スケジュール・Cloudflare Pages デプロイフック URL を呼び出し）
+- [x] T028 [P] `.github/workflows/daily-deploy.yml` を作成する（UTC 21:00 = JST 6:00 の cron スケジュール・Cloudflare Pages デプロイフック URL を呼び出し）
 - [ ] T029 [P] Cloudflare Pages ビルド設定を確認・記録する（ビルドコマンド: `npm install && npx eleventy --output=wwwroot`・出力ディレクトリ: `wwwroot`・Node.js バージョン: 20.x）
 - [ ] T030 スマートフォン表示を確認する（Chrome DevTools モバイルエミュレーション・横スクロールなし・タップターゲット 44×44px 以上）
 - [ ] T031 アクセシビリティを確認する（本文フォントサイズ 16px 以上・コントラスト比 4.5:1 以上・`<html lang="ja">` 設定・画像 alt テキスト）

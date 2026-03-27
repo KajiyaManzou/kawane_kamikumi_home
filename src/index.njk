@@ -37,6 +37,25 @@ title: トップページ
   </section>
 
 
+  {# --- 東海村ニュース --- #}
+  <section class="section">
+    <h2 class="section-title">東海村からのお知らせ</h2>
+    {% if tokai_news and tokai_news.length > 0 %}
+      <p class="section-updated">（{{ tokai_news[0].dateJa }}更新）</p>
+    {% endif %}
+    {% if tokai_news and tokai_news.length > 0 %}
+      <ul class="news-list">
+        {% for item in tokai_news %}
+          <li class="news-item">
+            <a class="news-link" href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="news-empty">現在情報を取得できません。</p>
+    {% endif %}
+  </section>
+
   {# --- ご意見・ご要望 --- #}
   <section class="section">
     <h2 class="section-title">ご意見・ご要望</h2>
