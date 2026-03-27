@@ -103,10 +103,10 @@
 **Purpose**: 全ストーリー横断の品質確認とデプロイ自動化
 
 - [x] T028 [P] `.github/workflows/daily-deploy.yml` を作成する（UTC 21:00 = JST 6:00 の cron スケジュール・Cloudflare Pages デプロイフック URL を呼び出し）
-- [ ] T029 [P] Cloudflare Pages ビルド設定を確認・記録する（ビルドコマンド: `npm install && npx eleventy --output=wwwroot`・出力ディレクトリ: `wwwroot`・Node.js バージョン: 20.x）
-- [ ] T030 スマートフォン表示を確認する（Chrome DevTools モバイルエミュレーション・横スクロールなし・タップターゲット 44×44px 以上）
-- [ ] T031 アクセシビリティを確認する（本文フォントサイズ 16px 以上・コントラスト比 4.5:1 以上・`<html lang="ja">` 設定・画像 alt テキスト）
-- [ ] T032 全ページのリンクが正常に機能することを確認する（PDFリンク・アーカイブリンク・外部リンク）
+- [x] T029 [P] Cloudflare Pages ビルド設定を確認・記録する（ビルドコマンド: `npm install && npx eleventy --output=wwwroot`・出力ディレクトリ: `wwwroot`・Node.js バージョン: 20.x）
+- [x] T030 スマートフォン表示を確認する（Chrome DevTools モバイルエミュレーション・横スクロールなし・タップターゲット 44×44px 以上）
+- [x] T031 アクセシビリティを確認する（本文フォントサイズ 16px 以上・コントラスト比 4.5:1 以上・`<html lang="ja">` 設定・画像 alt テキスト）
+- [x] T032 全ページのリンクが正常に機能することを確認する（PDFリンク・アーカイブリンク・外部リンク）
 - [ ] T033 GitHubにプッシュして Cloudflare Pages の自動デプロイが動作することを確認する
 
 ---
