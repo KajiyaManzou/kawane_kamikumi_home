@@ -50,15 +50,15 @@
 
 ### Implementation for User Story 1
 
-- [ ] T011 [P] [US1] お知らせカードコンポーネント `src/_includes/notice-card.njk` を作成する（日付・タイトル・PDFリンク表示）
-- [ ] T012 [P] [US1] 回覧板カードコンポーネント `src/_includes/circular-card.njk` を作成する（日付・タイトル・PDFリンク表示）
-- [ ] T013 [US1] トップページテンプレート `src/index.njk` を作成する（お知らせ最新5件セクション・回覧板最新1件セクション・「過去のお知らせ →」「過去の回覧板 →」リンク）
-- [ ] T014 [US1] お知らせアーカイブページ `src/archives/index.njk` を作成する（全お知らせを日付降順で一覧表示）
-- [ ] T015 [US1] 回覧板一覧ページ `src/circulars/index.njk` を作成する（全回覧板を日付降順で一覧表示）
-- [ ] T016 [P] [US1] サンプルお知らせ Markdown ファイルを作成する `content/notices/2026-03-27-spring-festival.md`（frontmatter: title/date/pdf）
-- [ ] T017 [P] [US1] サンプル回覧板 Markdown ファイルを作成する `content/circulars/2026-03-01-march-circular.md`（frontmatter: title/date/pdf）
-- [ ] T018 [US1] Eleventy コレクション設定を `.eleventy.js` に追加する（notices コレクション・circulars コレクション、日付降順ソート）
-- [ ] T019 [US1] 既存の手書き `wwwroot/index.html` を削除または移動し、Eleventy 生成版に置き換えることを確認する
+- [x] T011 [P] [US1] お知らせカードコンポーネント `src/_includes/notice-card.njk` を作成する（日付・タイトル・PDFリンク表示）
+- [x] T012 [P] [US1] 回覧板カードコンポーネント `src/_includes/circular-card.njk` を作成する（日付・タイトル・PDFリンク表示）
+- [x] T013 [US1] トップページテンプレート `src/index.njk` を作成する（お知らせ最新5件セクション・回覧板最新1件セクション・「過去のお知らせ →」「過去の回覧板 →」リンク）
+- [x] T014 [US1] お知らせアーカイブページ `src/archives/index.njk` を作成する（全お知らせを日付降順で一覧表示）
+- [x] T015 [US1] 回覧板一覧ページ `src/circulars/index.njk` を作成する（全回覧板を日付降順で一覧表示）
+- [x] T016 [P] [US1] サンプルお知らせ Markdown ファイルを作成する `content/notices/2026-03-27-spring-festival.md`（frontmatter: title/date/pdf）
+- [x] T017 [P] [US1] サンプル回覧板 Markdown ファイルを作成する `content/circulars/2026-03-01-march-circular.md`（frontmatter: title/date/pdf）
+- [x] T018 [US1] Eleventy コレクション設定を `.eleventy.js` に追加する（notices コレクション・circulars コレクション、日付降順ソート）
+- [x] T019 [US1] 既存の手書き `wwwroot/index.html` を削除または移動し、Eleventy 生成版に置き換えることを確認する
 
 **Checkpoint**: US1 完了 — `http://localhost:8080` でお知らせ5件・回覧板1件・アーカイブリンクが正常表示される
 

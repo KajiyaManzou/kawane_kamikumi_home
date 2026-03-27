@@ -1,0 +1,11 @@
+node_modules/
+wwwroot/
+specs/
+.devcontainer/
+.github/
+.claude/
+.specify/
+.agents/
+README.md
+CLAUDE.md
+LICENSE
