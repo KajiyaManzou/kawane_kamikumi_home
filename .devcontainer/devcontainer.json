@@ -1,0 +1,10 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Static Web (nginx)",
+  "image": "nginx:alpine",
+  "forwardPorts": [8080],
+  "postCreateCommand": "apk update && apk add git && mkdir -p /usr/share/nginx/html",
+  "mounts": [
+    "source=${localWorkspaceFolder}/wwwroot,target=/usr/share/nginx/html,type=bind"
+  ]
+}
