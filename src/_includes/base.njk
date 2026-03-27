@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} | {% endif %}東川根上組 公式情報ページ</title>
+  <title>{% if title %}{{ title }} | {% endif %}東川根上組 常会ページ</title>
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
   <header>
     <div class="header-inner">
-      <a href="/" class="site-title">東川根上組 公式情報ページ</a>
+      <a href="/" class="site-title">東川根上組 常会ページ</a>
+      <div class="header-qr">
+        {{ site_qr.svg | safe }}
+        <p class="header-qr-label">QRコード</p>
+      </div>
     </div>
   </header>
 

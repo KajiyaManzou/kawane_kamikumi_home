@@ -8,5 +8,6 @@
   "remoteEnv": {
     "PATH": "/root/.local/bin:${containerEnv:PATH}"
   },
-  "postCreateCommand": "apt-get update && apt-get install -y git python3 python3-pip nodejs npm && pip3 install uv --break-system-packages && uv tool install specify-cli --from git+https://github.com/github/spec-kit.git && npm install -g @google/gemini-cli"
+  "postCreateCommand": "apt-get update && apt-get install -y git python3 python3-pip nodejs npm && pip3 install uv --break-system-packages && uv tool install specify-cli --from git+https://github.com/github/spec-kit.git && npm install -g @google/gemini-cli",
+  "postStartCommand": "nginx"
 }
