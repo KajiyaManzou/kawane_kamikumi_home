@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns="http://purl.org/rss/1.0/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<channel rdf:about="https://www.vill.tokai.ibaraki.jp/index.html">
+<title>東海村</title>
+<link>https://www.vill.tokai.ibaraki.jp/index.html</link>
+<description>東海村</description>
+<items>
+<rdf:Seq>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/nogyoiinkaijimukyoku/1/1/7210.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12726.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/soumubu/zaiseikeiei/1/3/3/12537.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/1/8268.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/4/13047.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/4/5061.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sangyobu/sangyoseisakuka/4/3/12179.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/jway/8310.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/koza_taiken/10132.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/tenji_kikakuten/12535.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/suidoka/3/5607.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/kukakuseirika/1/1/2/12239.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/hokenka/4/12602.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12753.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/gakkokyoikuka/2/2/8780.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/9/10668.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/somminseikatsubu/kankyoseisakuka/1/3/10474.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/12767.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/wakamono_meeting/wakamonokaigi_r7/12769.html"/>
+<rdf:li resource="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/seisyounen/ibentonado/12766.html"/>
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/nogyoiinkaijimukyoku/1/1/7210.html">
+<title>許可申請受付日について</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/nogyoiinkaijimukyoku/1/1/7210.html</link>
+<description></description>
+<dc:date>2026-04-01T08:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12726.html">
+<title>東海村窓口発券機購入事業者の公募（プロポーザル）の実施について</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12726.html</link>
+<description></description>
+<dc:date>2026-03-27T09:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/soumubu/zaiseikeiei/1/3/3/12537.html">
+<title>令和8年度当初予算</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/soumubu/zaiseikeiei/1/3/3/12537.html</link>
+<description></description>
+<dc:date>2026-03-26T13:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/1/8268.html">
+<title>胸部CT検診の申込みについて</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/1/8268.html</link>
+<description></description>
+<dc:date>2026-03-25T00:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/4/13047.html">
+<title>東海村教育振興基本計画－とうかい教育プラン2030－（案）へのパブリックコメントを実施しました</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/4/13047.html</link>
+<description></description>
+<dc:date>2026-03-24T19:30:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/4/5061.html">
+<title>医療行為により免疫が低下または消失した方の予防接種再接種費用の助成について</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/kenkozoshinka/2/1/4/5061.html</link>
+<description></description>
+<dc:date>2026-03-24T16:28:56+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sangyobu/sangyoseisakuka/4/3/12179.html">
+<title>アイヴィルシェアキッチンがオープンします！</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sangyobu/sangyoseisakuka/4/3/12179.html</link>
+<description></description>
+<dc:date>2026-03-23T16:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/jway/8310.html">
+<title>【ケーブルテレビJWAY】番組情報</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/jway/8310.html</link>
+<description></description>
+<dc:date>2026-03-23T00:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/koza_taiken/10132.html">
+<title>とうかいまるごと博物館講座（まる博）</title>
+<link>https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/koza_taiken/10132.html</link>
+<description></description>
+<dc:date>2026-03-22T09:03:35+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/tenji_kikakuten/12535.html">
+<title>【春季企画展】わたしが旅する10の理由</title>
+<link>https://www.vill.tokai.ibaraki.jp/tokaivillagemuseum/tenji_kikakuten/12535.html</link>
+<description></description>
+<dc:date>2026-03-20T08:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/suidoka/3/5607.html">
+<title>「東海村水道事業経営戦略（案）」への意見募集結果を公表します</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/suidoka/3/5607.html</link>
+<description></description>
+<dc:date>2026-03-18T17:15:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/kukakuseirika/1/1/2/12239.html">
+<title>ドローン撮影について（東海中央土地区画整理事業地内）</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kensetsubu/kukakuseirika/1/1/2/12239.html</link>
+<description></description>
+<dc:date>2026-03-18T08:50:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/hokenka/4/12602.html">
+<title>マイナ保険証がマル福・マル特の受給者証として利用できるようになります</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/fukushibu/hokenka/4/12602.html</link>
+<description></description>
+<dc:date>2026-03-18T08:32:23+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12753.html">
+<title>東海村AI活用動画生成サービス導入に係るサウンディング型市場調査実施のお知らせ</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/digitalkaikakusuisinka/39/3_1/dejitarukousou/12753.html</link>
+<description></description>
+<dc:date>2026-03-16T13:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/gakkokyoikuka/2/2/8780.html">
+<title>【急募】令和8年度東海村会計年度任用職員（看護師）を募集します</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/gakkokyoikuka/2/2/8780.html</link>
+<description></description>
+<dc:date>2026-03-16T00:00:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/9/10668.html">
+<title>久慈川サイクリングコースの迂回路について（周知）</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/9/10668.html</link>
+<description></description>
+<dc:date>2026-03-13T15:52:57+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/somminseikatsubu/kankyoseisakuka/1/3/10474.html">
+<title>【受付終了】令和7年度  自転車用ヘルメットを購入する方へ補助券を交付します</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/somminseikatsubu/kankyoseisakuka/1/3/10474.html</link>
+<description></description>
+<dc:date>2026-03-13T13:10:00+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/12767.html">
+<title>「とうかいむら高校生まちづくりスクール」×「東海村わかもの会議」わかまちプロジェクト発表会を開催しました！</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/12767.html</link>
+<description></description>
+<dc:date>2026-03-12T13:02:23+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/wakamono_meeting/wakamonokaigi_r7/12769.html">
+<title>東海村わかもの会議主催の交流会を実施しました！</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/sougousenryaku/tiikisernyakuka/kodomo-wakamonomatidukuri/wakamono_meeting/wakamonokaigi_r7/12769.html</link>
+<description></description>
+<dc:date>2026-03-12T13:01:40+09:00</dc:date>
+</item>
+<item rdf:about="https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/seisyounen/ibentonado/12766.html">
+<title>『るるぶ特別編集 東海村』が完成しました！</title>
+<link>https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/kyoikuiinkai/shogaigakushuka/seisyounen/ibentonado/12766.html</link>
+<description></description>
+<dc:date>2026-03-12T09:00:00+09:00</dc:date>
+</item>
+</rdf:RDF>

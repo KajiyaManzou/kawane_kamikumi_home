@@ -1,0 +1,318 @@
+<h2>Checklist Purpose: &quot;Unit Tests for English&quot;</h2>
+<p><strong>CRITICAL CONCEPT</strong>: Checklists are <strong>UNIT TESTS FOR REQUIREMENTS WRITING</strong> - they validate the quality, clarity, and completeness of requirements in a given domain.</p>
+<p><strong>NOT for verification/testing</strong>:</p>
+<ul>
+<li>❌ NOT &quot;Verify the button clicks correctly&quot;</li>
+<li>❌ NOT &quot;Test error handling works&quot;</li>
+<li>❌ NOT &quot;Confirm the API returns 200&quot;</li>
+<li>❌ NOT checking if code/implementation matches the spec</li>
+</ul>
+<p><strong>FOR requirements quality validation</strong>:</p>
+<ul>
+<li>✅ &quot;Are visual hierarchy requirements defined for all card types?&quot; (completeness)</li>
+<li>✅ &quot;Is 'prominent display' quantified with specific sizing/positioning?&quot; (clarity)</li>
+<li>✅ &quot;Are hover state requirements consistent across all interactive elements?&quot; (consistency)</li>
+<li>✅ &quot;Are accessibility requirements defined for keyboard navigation?&quot; (coverage)</li>
+<li>✅ &quot;Does the spec define what happens when logo image fails to load?&quot; (edge cases)</li>
+</ul>
+<p><strong>Metaphor</strong>: If your spec is code written in English, the checklist is its unit test suite. You're testing whether the requirements are well-written, complete, unambiguous, and ready for implementation - NOT whether the implementation works.</p>
+<h2>User Input</h2>
+<pre><code class="language-text">$ARGUMENTS
+</code></pre>
+<p>You <strong>MUST</strong> consider the user input before proceeding (if not empty).</p>
+<h2>Execution Steps</h2>
+<ol>
+<li>
+<p><strong>Setup</strong>: Run <code>.specify/scripts/bash/check-prerequisites.sh --json</code> from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS list.</p>
+<ul>
+<li>All file paths must be absolute.</li>
+<li>For single quotes in args like &quot;I'm Groot&quot;, use escape syntax: e.g 'I'''m Groot' (or double-quote if possible: &quot;I'm Groot&quot;).</li>
+</ul>
+</li>
+<li>
+<p><strong>Clarify intent (dynamic)</strong>: Derive up to THREE initial contextual clarifying questions (no pre-baked catalog). They MUST:</p>
+<ul>
+<li>Be generated from the user's phrasing + extracted signals from spec/plan/tasks</li>
+<li>Only ask about information that materially changes checklist content</li>
+<li>Be skipped individually if already unambiguous in <code>$ARGUMENTS</code></li>
+<li>Prefer precision over breadth</li>
+</ul>
+<p>Generation algorithm:</p>
+<ol>
+<li>Extract signals: feature domain keywords (e.g., auth, latency, UX, API), risk indicators (&quot;critical&quot;, &quot;must&quot;, &quot;compliance&quot;), stakeholder hints (&quot;QA&quot;, &quot;review&quot;, &quot;security team&quot;), and explicit deliverables (&quot;a11y&quot;, &quot;rollback&quot;, &quot;contracts&quot;).</li>
+<li>Cluster signals into candidate focus areas (max 4) ranked by relevance.</li>
+<li>Identify probable audience &amp; timing (author, reviewer, QA, release) if not explicit.</li>
+<li>Detect missing dimensions: scope breadth, depth/rigor, risk emphasis, exclusion boundaries, measurable acceptance criteria.</li>
+<li>Formulate questions chosen from these archetypes:
+<ul>
+<li>Scope refinement (e.g., &quot;Should this include integration touchpoints with X and Y or stay limited to local module correctness?&quot;)</li>
+<li>Risk prioritization (e.g., &quot;Which of these potential risk areas should receive mandatory gating checks?&quot;)</li>
+<li>Depth calibration (e.g., &quot;Is this a lightweight pre-commit sanity list or a formal release gate?&quot;)</li>
+<li>Audience framing (e.g., &quot;Will this be used by the author only or peers during PR review?&quot;)</li>
+<li>Boundary exclusion (e.g., &quot;Should we explicitly exclude performance tuning items this round?&quot;)</li>
+<li>Scenario class gap (e.g., &quot;No recovery flows detected—are rollback / partial failure paths in scope?&quot;)</li>
+</ul>
+</li>
+</ol>
+<p>Question formatting rules:</p>
+<ul>
+<li>If presenting options, generate a compact table with columns: Option | Candidate | Why It Matters</li>
+<li>Limit to A–E options maximum; omit table if a free-form answer is clearer</li>
+<li>Never ask the user to restate what they already said</li>
+<li>Avoid speculative categories (no hallucination). If uncertain, ask explicitly: &quot;Confirm whether X belongs in scope.&quot;</li>
+</ul>
+<p>Defaults when interaction impossible:</p>
+<ul>
+<li>Depth: Standard</li>
+<li>Audience: Reviewer (PR) if code-related; Author otherwise</li>
+<li>Focus: Top 2 relevance clusters</li>
+</ul>
+<p>Output the questions (label Q1/Q2/Q3). After answers: if ≥2 scenario classes (Alternate / Exception / Recovery / Non-Functional domain) remain unclear, you MAY ask up to TWO more targeted follow‑ups (Q4/Q5) with a one-line justification each (e.g., &quot;Unresolved recovery path risk&quot;). Do not exceed five total questions. Skip escalation if user explicitly declines more.</p>
+</li>
+<li>
+<p><strong>Understand user request</strong>: Combine <code>$ARGUMENTS</code> + clarifying answers:</p>
+<ul>
+<li>Derive checklist theme (e.g., security, review, deploy, ux)</li>
+<li>Consolidate explicit must-have items mentioned by user</li>
+<li>Map focus selections to category scaffolding</li>
+<li>Infer any missing context from spec/plan/tasks (do NOT hallucinate)</li>
+</ul>
+</li>
+<li>
+<p><strong>Load feature context</strong>: Read from FEATURE_DIR:</p>
+<ul>
+<li>spec.md: Feature requirements and scope</li>
+<li>plan.md (if exists): Technical details, dependencies</li>
+<li>tasks.md (if exists): Implementation tasks</li>
+</ul>
+<p><strong>Context Loading Strategy</strong>:</p>
+<ul>
+<li>Load only necessary portions relevant to active focus areas (avoid full-file dumping)</li>
+<li>Prefer summarizing long sections into concise scenario/requirement bullets</li>
+<li>Use progressive disclosure: add follow-on retrieval only if gaps detected</li>
+<li>If source docs are large, generate interim summary items instead of embedding raw text</li>
+</ul>
+</li>
+<li>
+<p><strong>Generate checklist</strong> - Create &quot;Unit Tests for Requirements&quot;:</p>
+<ul>
+<li>Create <code>FEATURE_DIR/checklists/</code> directory if it doesn't exist</li>
+<li>Generate unique checklist filename:
+<ul>
+<li>Use short, descriptive name based on domain (e.g., <code>ux.md</code>, <code>api.md</code>, <code>security.md</code>)</li>
+<li>Format: <code>[domain].md</code></li>
+</ul>
+</li>
+<li>File handling behavior:
+<ul>
+<li>If file does NOT exist: Create new file and number items starting from CHK001</li>
+<li>If file exists: Append new items to existing file, continuing from the last CHK ID (e.g., if last item is CHK015, start new items at CHK016)</li>
+</ul>
+</li>
+<li>Never delete or replace existing checklist content - always preserve and append</li>
+</ul>
+<p><strong>CORE PRINCIPLE - Test the Requirements, Not the Implementation</strong>:
+Every checklist item MUST evaluate the REQUIREMENTS THEMSELVES for:</p>
+<ul>
+<li><strong>Completeness</strong>: Are all necessary requirements present?</li>
+<li><strong>Clarity</strong>: Are requirements unambiguous and specific?</li>
+<li><strong>Consistency</strong>: Do requirements align with each other?</li>
+<li><strong>Measurability</strong>: Can requirements be objectively verified?</li>
+<li><strong>Coverage</strong>: Are all scenarios/edge cases addressed?</li>
+</ul>
+<p><strong>Category Structure</strong> - Group items by requirement quality dimensions:</p>
+<ul>
+<li><strong>Requirement Completeness</strong> (Are all necessary requirements documented?)</li>
+<li><strong>Requirement Clarity</strong> (Are requirements specific and unambiguous?)</li>
+<li><strong>Requirement Consistency</strong> (Do requirements align without conflicts?)</li>
+<li><strong>Acceptance Criteria Quality</strong> (Are success criteria measurable?)</li>
+<li><strong>Scenario Coverage</strong> (Are all flows/cases addressed?)</li>
+<li><strong>Edge Case Coverage</strong> (Are boundary conditions defined?)</li>
+<li><strong>Non-Functional Requirements</strong> (Performance, Security, Accessibility, etc. - are they specified?)</li>
+<li><strong>Dependencies &amp; Assumptions</strong> (Are they documented and validated?)</li>
+<li><strong>Ambiguities &amp; Conflicts</strong> (What needs clarification?)</li>
+</ul>
+<p><strong>HOW TO WRITE CHECKLIST ITEMS - &quot;Unit Tests for English&quot;</strong>:</p>
+<p>❌ <strong>WRONG</strong> (Testing implementation):</p>
+<ul>
+<li>&quot;Verify landing page displays 3 episode cards&quot;</li>
+<li>&quot;Test hover states work on desktop&quot;</li>
+<li>&quot;Confirm logo click navigates home&quot;</li>
+</ul>
+<p>✅ <strong>CORRECT</strong> (Testing requirements quality):</p>
+<ul>
+<li>&quot;Are the exact number and layout of featured episodes specified?&quot; [Completeness]</li>
+<li>&quot;Is 'prominent display' quantified with specific sizing/positioning?&quot; [Clarity]</li>
+<li>&quot;Are hover state requirements consistent across all interactive elements?&quot; [Consistency]</li>
+<li>&quot;Are keyboard navigation requirements defined for all interactive UI?&quot; [Coverage]</li>
+<li>&quot;Is the fallback behavior specified when logo image fails to load?&quot; [Edge Cases]</li>
+<li>&quot;Are loading states defined for asynchronous episode data?&quot; [Completeness]</li>
+<li>&quot;Does the spec define visual hierarchy for competing UI elements?&quot; [Clarity]</li>
+</ul>
+<p><strong>ITEM STRUCTURE</strong>:
+Each item should follow this pattern:</p>
+<ul>
+<li>Question format asking about requirement quality</li>
+<li>Focus on what's WRITTEN (or not written) in the spec/plan</li>
+<li>Include quality dimension in brackets [Completeness/Clarity/Consistency/etc.]</li>
+<li>Reference spec section <code>[Spec §X.Y]</code> when checking existing requirements</li>
+<li>Use <code>[Gap]</code> marker when checking for missing requirements</li>
+</ul>
+<p><strong>EXAMPLES BY QUALITY DIMENSION</strong>:</p>
+<p>Completeness:</p>
+<ul>
+<li>&quot;Are error handling requirements defined for all API failure modes? [Gap]&quot;</li>
+<li>&quot;Are accessibility requirements specified for all interactive elements? [Completeness]&quot;</li>
+<li>&quot;Are mobile breakpoint requirements defined for responsive layouts? [Gap]&quot;</li>
+</ul>
+<p>Clarity:</p>
+<ul>
+<li>&quot;Is 'fast loading' quantified with specific timing thresholds? [Clarity, Spec §NFR-2]&quot;</li>
+<li>&quot;Are 'related episodes' selection criteria explicitly defined? [Clarity, Spec §FR-5]&quot;</li>
+<li>&quot;Is 'prominent' defined with measurable visual properties? [Ambiguity, Spec §FR-4]&quot;</li>
+</ul>
+<p>Consistency:</p>
+<ul>
+<li>&quot;Do navigation requirements align across all pages? [Consistency, Spec §FR-10]&quot;</li>
+<li>&quot;Are card component requirements consistent between landing and detail pages? [Consistency]&quot;</li>
+</ul>
+<p>Coverage:</p>
+<ul>
+<li>&quot;Are requirements defined for zero-state scenarios (no episodes)? [Coverage, Edge Case]&quot;</li>
+<li>&quot;Are concurrent user interaction scenarios addressed? [Coverage, Gap]&quot;</li>
+<li>&quot;Are requirements specified for partial data loading failures? [Coverage, Exception Flow]&quot;</li>
+</ul>
+<p>Measurability:</p>
+<ul>
+<li>&quot;Are visual hierarchy requirements measurable/testable? [Acceptance Criteria, Spec §FR-1]&quot;</li>
+<li>&quot;Can 'balanced visual weight' be objectively verified? [Measurability, Spec §FR-2]&quot;</li>
+</ul>
+<p><strong>Scenario Classification &amp; Coverage</strong> (Requirements Quality Focus):</p>
+<ul>
+<li>Check if requirements exist for: Primary, Alternate, Exception/Error, Recovery, Non-Functional scenarios</li>
+<li>For each scenario class, ask: &quot;Are [scenario type] requirements complete, clear, and consistent?&quot;</li>
+<li>If scenario class missing: &quot;Are [scenario type] requirements intentionally excluded or missing? [Gap]&quot;</li>
+<li>Include resilience/rollback when state mutation occurs: &quot;Are rollback requirements defined for migration failures? [Gap]&quot;</li>
+</ul>
+<p><strong>Traceability Requirements</strong>:</p>
+<ul>
+<li>MINIMUM: ≥80% of items MUST include at least one traceability reference</li>
+<li>Each item should reference: spec section <code>[Spec §X.Y]</code>, or use markers: <code>[Gap]</code>, <code>[Ambiguity]</code>, <code>[Conflict]</code>, <code>[Assumption]</code></li>
+<li>If no ID system exists: &quot;Is a requirement &amp; acceptance criteria ID scheme established? [Traceability]&quot;</li>
+</ul>
+<p><strong>Surface &amp; Resolve Issues</strong> (Requirements Quality Problems):
+Ask questions about the requirements themselves:</p>
+<ul>
+<li>Ambiguities: &quot;Is the term 'fast' quantified with specific metrics? [Ambiguity, Spec §NFR-1]&quot;</li>
+<li>Conflicts: &quot;Do navigation requirements conflict between §FR-10 and §FR-10a? [Conflict]&quot;</li>
+<li>Assumptions: &quot;Is the assumption of 'always available podcast API' validated? [Assumption]&quot;</li>
+<li>Dependencies: &quot;Are external podcast API requirements documented? [Dependency, Gap]&quot;</li>
+<li>Missing definitions: &quot;Is 'visual hierarchy' defined with measurable criteria? [Gap]&quot;</li>
+</ul>
+<p><strong>Content Consolidation</strong>:</p>
+<ul>
+<li>Soft cap: If raw candidate items &gt; 40, prioritize by risk/impact</li>
+<li>Merge near-duplicates checking the same requirement aspect</li>
+<li>If &gt;5 low-impact edge cases, create one item: &quot;Are edge cases X, Y, Z addressed in requirements? [Coverage]&quot;</li>
+</ul>
+<p><strong>🚫 ABSOLUTELY PROHIBITED</strong> - These make it an implementation test, not a requirements test:</p>
+<ul>
+<li>❌ Any item starting with &quot;Verify&quot;, &quot;Test&quot;, &quot;Confirm&quot;, &quot;Check&quot; + implementation behavior</li>
+<li>❌ References to code execution, user actions, system behavior</li>
+<li>❌ &quot;Displays correctly&quot;, &quot;works properly&quot;, &quot;functions as expected&quot;</li>
+<li>❌ &quot;Click&quot;, &quot;navigate&quot;, &quot;render&quot;, &quot;load&quot;, &quot;execute&quot;</li>
+<li>❌ Test cases, test plans, QA procedures</li>
+<li>❌ Implementation details (frameworks, APIs, algorithms)</li>
+</ul>
+<p><strong>✅ REQUIRED PATTERNS</strong> - These test requirements quality:</p>
+<ul>
+<li>✅ &quot;Are [requirement type] defined/specified/documented for [scenario]?&quot;</li>
+<li>✅ &quot;Is [vague term] quantified/clarified with specific criteria?&quot;</li>
+<li>✅ &quot;Are requirements consistent between [section A] and [section B]?&quot;</li>
+<li>✅ &quot;Can [requirement] be objectively measured/verified?&quot;</li>
+<li>✅ &quot;Are [edge cases/scenarios] addressed in requirements?&quot;</li>
+<li>✅ &quot;Does the spec define [missing aspect]?&quot;</li>
+</ul>
+</li>
+<li>
+<p><strong>Structure Reference</strong>: Generate the checklist following the canonical template in <code>.specify/templates/checklist-template.md</code> for title, meta section, category headings, and ID formatting. If template is unavailable, use: H1 title, purpose/created meta lines, <code>##</code> category sections containing <code>- [ ] CHK### &lt;requirement item&gt;</code> lines with globally incrementing IDs starting at CHK001.</p>
+</li>
+<li>
+<p><strong>Report</strong>: Output full path to checklist file, item count, and summarize whether the run created a new file or appended to an existing one. Summarize:</p>
+<ul>
+<li>Focus areas selected</li>
+<li>Depth level</li>
+<li>Actor/timing</li>
+<li>Any explicit user-specified must-have items incorporated</li>
+</ul>
+</li>
+</ol>
+<p><strong>Important</strong>: Each <code>/speckit.checklist</code> command invocation uses a short, descriptive checklist filename and either creates a new file or appends to an existing one. This allows:</p>
+<ul>
+<li>Multiple checklists of different types (e.g., <code>ux.md</code>, <code>test.md</code>, <code>security.md</code>)</li>
+<li>Simple, memorable filenames that indicate checklist purpose</li>
+<li>Easy identification and navigation in the <code>checklists/</code> folder</li>
+</ul>
+<p>To avoid clutter, use descriptive types and clean up obsolete checklists when done.</p>
+<h2>Example Checklist Types &amp; Sample Items</h2>
+<p><strong>UX Requirements Quality:</strong> <code>ux.md</code></p>
+<p>Sample items (testing the requirements, NOT the implementation):</p>
+<ul>
+<li>&quot;Are visual hierarchy requirements defined with measurable criteria? [Clarity, Spec §FR-1]&quot;</li>
+<li>&quot;Is the number and positioning of UI elements explicitly specified? [Completeness, Spec §FR-1]&quot;</li>
+<li>&quot;Are interaction state requirements (hover, focus, active) consistently defined? [Consistency]&quot;</li>
+<li>&quot;Are accessibility requirements specified for all interactive elements? [Coverage, Gap]&quot;</li>
+<li>&quot;Is fallback behavior defined when images fail to load? [Edge Case, Gap]&quot;</li>
+<li>&quot;Can 'prominent display' be objectively measured? [Measurability, Spec §FR-4]&quot;</li>
+</ul>
+<p><strong>API Requirements Quality:</strong> <code>api.md</code></p>
+<p>Sample items:</p>
+<ul>
+<li>&quot;Are error response formats specified for all failure scenarios? [Completeness]&quot;</li>
+<li>&quot;Are rate limiting requirements quantified with specific thresholds? [Clarity]&quot;</li>
+<li>&quot;Are authentication requirements consistent across all endpoints? [Consistency]&quot;</li>
+<li>&quot;Are retry/timeout requirements defined for external dependencies? [Coverage, Gap]&quot;</li>
+<li>&quot;Is versioning strategy documented in requirements? [Gap]&quot;</li>
+</ul>
+<p><strong>Performance Requirements Quality:</strong> <code>performance.md</code></p>
+<p>Sample items:</p>
+<ul>
+<li>&quot;Are performance requirements quantified with specific metrics? [Clarity]&quot;</li>
+<li>&quot;Are performance targets defined for all critical user journeys? [Coverage]&quot;</li>
+<li>&quot;Are performance requirements under different load conditions specified? [Completeness]&quot;</li>
+<li>&quot;Can performance requirements be objectively measured? [Measurability]&quot;</li>
+<li>&quot;Are degradation requirements defined for high-load scenarios? [Edge Case, Gap]&quot;</li>
+</ul>
+<p><strong>Security Requirements Quality:</strong> <code>security.md</code></p>
+<p>Sample items:</p>
+<ul>
+<li>&quot;Are authentication requirements specified for all protected resources? [Coverage]&quot;</li>
+<li>&quot;Are data protection requirements defined for sensitive information? [Completeness]&quot;</li>
+<li>&quot;Is the threat model documented and requirements aligned to it? [Traceability]&quot;</li>
+<li>&quot;Are security requirements consistent with compliance obligations? [Consistency]&quot;</li>
+<li>&quot;Are security failure/breach response requirements defined? [Gap, Exception Flow]&quot;</li>
+</ul>
+<h2>Anti-Examples: What NOT To Do</h2>
+<p><strong>❌ WRONG - These test implementation, not requirements:</strong></p>
+<pre><code class="language-markdown">- [ ] CHK001 - Verify landing page displays 3 episode cards [Spec §FR-001]
+- [ ] CHK002 - Test hover states work correctly on desktop [Spec §FR-003]
+- [ ] CHK003 - Confirm logo click navigates to home page [Spec §FR-010]
+- [ ] CHK004 - Check that related episodes section shows 3-5 items [Spec §FR-005]
+</code></pre>
+<p><strong>✅ CORRECT - These test requirements quality:</strong></p>
+<pre><code class="language-markdown">- [ ] CHK001 - Are the number and layout of featured episodes explicitly specified? [Completeness, Spec §FR-001]
+- [ ] CHK002 - Are hover state requirements consistently defined for all interactive elements? [Consistency, Spec §FR-003]
+- [ ] CHK003 - Are navigation requirements clear for all clickable brand elements? [Clarity, Spec §FR-010]
+- [ ] CHK004 - Is the selection criteria for related episodes documented? [Gap, Spec §FR-005]
+- [ ] CHK005 - Are loading state requirements defined for asynchronous episode data? [Gap]
+- [ ] CHK006 - Can &quot;visual hierarchy&quot; requirements be objectively measured? [Measurability, Spec §FR-001]
+</code></pre>
+<p><strong>Key Differences:</strong></p>
+<ul>
+<li>Wrong: Tests if the system works correctly</li>
+<li>Correct: Tests if the requirements are written correctly</li>
+<li>Wrong: Verification of behavior</li>
+<li>Correct: Validation of requirement quality</li>
+<li>Wrong: &quot;Does it do X?&quot;</li>
+<li>Correct: &quot;Is X clearly specified?&quot;</li>
+</ul>

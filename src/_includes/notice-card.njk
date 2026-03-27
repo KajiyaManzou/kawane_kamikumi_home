@@ -1,0 +1,7 @@
+<li class="card">
+  <p class="card-date">{{ notice.date | dateJa }}</p>
+  <p class="card-title">{{ notice.data.title }}</p>
+  {% if notice.data.pdf %}
+    <a class="card-pdf-link" href="{{ notice.data.pdf }}" target="_blank" rel="noopener">PDFを見る</a>
+  {% endif %}
+</li>

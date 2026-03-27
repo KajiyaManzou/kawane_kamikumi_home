@@ -1,0 +1,7 @@
+<li class="card">
+  <p class="card-date">{{ circular.date | dateJa }}</p>
+  <p class="card-title">{{ circular.data.title }}</p>
+  {% if circular.data.pdf %}
+    <a class="card-pdf-link" href="{{ circular.data.pdf }}" target="_blank" rel="noopener">PDFを見る</a>
+  {% endif %}
+</li>

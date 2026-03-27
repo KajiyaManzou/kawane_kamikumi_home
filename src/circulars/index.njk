@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: 回覧板一覧
+---
+<div class="container">
+  <section class="section">
+    <h2 class="section-title">回覧板一覧</h2>
+    {% set circulars = collections.circulars | reverse %}
+    {% if circulars and circulars.length > 0 %}
+      <ul class="card-list">
+        {% for item in circulars %}
+          {% set circular = item %}
+          {% include "circular-card.njk" %}
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>現在回覧板はありません。</p>
+    {% endif %}
+    <a class="archive-link" href="/">← トップページに戻る</a>
+  </section>
+</div>

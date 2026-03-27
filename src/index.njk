@@ -1,0 +1,80 @@
+---
+layout: base.njk
+title: トップページ
+---
+<div class="container">
+
+  {# --- お知らせ --- #}
+  <section class="section">
+    <h2 class="section-title">お知らせ</h2>
+    {% set notices = collections.notices | reverse %}
+    {% if notices and notices.length > 0 %}
+      <ul class="card-list">
+        {% for item in notices.slice(0, 5) %}
+          {% set notice = item %}
+          {% include "notice-card.njk" %}
+        {% endfor %}
+      </ul>
+      <a class="archive-link" href="/archives/">過去のお知らせ →</a>
+    {% else %}
+      <p>現在お知らせはありません。</p>
+    {% endif %}
+  </section>
+
+  {# --- 回覧板 --- #}
+  <section class="section">
+    <h2 class="section-title">回覧板</h2>
+    {% set circulars = collections.circulars | reverse %}
+    {% if circulars and circulars.length > 0 %}
+      {% set circular = circulars[0] %}
+      <ul class="card-list">
+        {% include "circular-card.njk" %}
+      </ul>
+      <a class="archive-link" href="/circulars/">過去の回覧板 →</a>
+    {% else %}
+      <p>現在回覧板はありません。</p>
+    {% endif %}
+  </section>
+
+
+  {# --- 東海村ニュース --- #}
+  <section class="section">
+    <h2 class="section-title">東海村からのお知らせ</h2>
+    {% if tokai_news and tokai_news.length > 0 %}
+      <p class="section-updated">（{{ tokai_news[0].dateJa }}更新）</p>
+    {% endif %}
+    {% if tokai_news and tokai_news.length > 0 %}
+      <ul class="news-list">
+        {% for item in tokai_news %}
+          <li class="news-item">
+            <a class="news-link" href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="news-empty">現在情報を取得できません。</p>
+    {% endif %}
+  </section>
+
+  {# --- ご意見・ご要望 --- #}
+  <section class="section">
+    <h2 class="section-title">ご意見・ご要望</h2>
+    <p class="form-notice">送信内容は東川根上組の活動改善にのみ使用します。個人情報は第三者に提供しません。</p>
+    <div class="google-form-wrapper">
+      <iframe
+        src="{{ config.googleFormUrl }}"
+        width="100%"
+        height="480"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="ご意見・ご要望フォーム">
+      </iframe>
+    </div>
+    <noscript>
+      <p class="form-fallback">フォームを読み込めない場合は、班長までお問い合わせください。</p>
+    </noscript>
+    <p class="form-fallback">フォームが表示されない場合は、班長までお問い合わせください。</p>
+  </section>
+
+</div>

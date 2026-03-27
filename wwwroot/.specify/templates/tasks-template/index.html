@@ -1,0 +1,214 @@
+<h1>Tasks: [FEATURE NAME]</h1>
+<p><strong>Input</strong>: Design documents from <code>/specs/[###-feature-name]/</code>
+<strong>Prerequisites</strong>: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/</p>
+<p><strong>Tests</strong>: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.</p>
+<p><strong>Organization</strong>: Tasks are grouped by user story to enable independent implementation and testing of each story.</p>
+<h2>Format: <code>[ID] [P?] [Story] Description</code></h2>
+<ul>
+<li><strong>[P]</strong>: Can run in parallel (different files, no dependencies)</li>
+<li><strong>[Story]</strong>: Which user story this task belongs to (e.g., US1, US2, US3)</li>
+<li>Include exact file paths in descriptions</li>
+</ul>
+<h2>Path Conventions</h2>
+<ul>
+<li><strong>Single project</strong>: <code>src/</code>, <code>tests/</code> at repository root</li>
+<li><strong>Web app</strong>: <code>backend/src/</code>, <code>frontend/src/</code></li>
+<li><strong>Mobile</strong>: <code>api/src/</code>, <code>ios/src/</code> or <code>android/src/</code></li>
+<li>Paths shown below assume single project - adjust based on plan.md structure</li>
+</ul>
+<!-- 
+  ============================================================================
+  IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
+  
+  The /speckit.tasks command MUST replace these with actual tasks based on:
+  - User stories from spec.md (with their priorities P1, P2, P3...)
+  - Feature requirements from plan.md
+  - Entities from data-model.md
+  - Endpoints from contracts/
+  
+  Tasks MUST be organized by user story so each story can be:
+  - Implemented independently
+  - Tested independently
+  - Delivered as an MVP increment
+  
+  DO NOT keep these sample tasks in the generated tasks.md file.
+  ============================================================================
+-->
+<h2>Phase 1: Setup (Shared Infrastructure)</h2>
+<p><strong>Purpose</strong>: Project initialization and basic structure</p>
+<ul>
+<li>[ ] T001 Create project structure per implementation plan</li>
+<li>[ ] T002 Initialize [language] project with [framework] dependencies</li>
+<li>[ ] T003 [P] Configure linting and formatting tools</li>
+</ul>
+<hr>
+<h2>Phase 2: Foundational (Blocking Prerequisites)</h2>
+<p><strong>Purpose</strong>: Core infrastructure that MUST be complete before ANY user story can be implemented</p>
+<p><strong>⚠️ CRITICAL</strong>: No user story work can begin until this phase is complete</p>
+<p>Examples of foundational tasks (adjust based on your project):</p>
+<ul>
+<li>[ ] T004 Setup database schema and migrations framework</li>
+<li>[ ] T005 [P] Implement authentication/authorization framework</li>
+<li>[ ] T006 [P] Setup API routing and middleware structure</li>
+<li>[ ] T007 Create base models/entities that all stories depend on</li>
+<li>[ ] T008 Configure error handling and logging infrastructure</li>
+<li>[ ] T009 Setup environment configuration management</li>
+</ul>
+<p><strong>Checkpoint</strong>: Foundation ready - user story implementation can now begin in parallel</p>
+<hr>
+<h2>Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP</h2>
+<p><strong>Goal</strong>: [Brief description of what this story delivers]</p>
+<p><strong>Independent Test</strong>: [How to verify this story works on its own]</p>
+<h3>Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️</h3>
+<blockquote>
+<p><strong>NOTE: Write these tests FIRST, ensure they FAIL before implementation</strong></p>
+</blockquote>
+<ul>
+<li>[ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py</li>
+<li>[ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py</li>
+</ul>
+<h3>Implementation for User Story 1</h3>
+<ul>
+<li>[ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py</li>
+<li>[ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py</li>
+<li>[ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)</li>
+<li>[ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py</li>
+<li>[ ] T016 [US1] Add validation and error handling</li>
+<li>[ ] T017 [US1] Add logging for user story 1 operations</li>
+</ul>
+<p><strong>Checkpoint</strong>: At this point, User Story 1 should be fully functional and testable independently</p>
+<hr>
+<h2>Phase 4: User Story 2 - [Title] (Priority: P2)</h2>
+<p><strong>Goal</strong>: [Brief description of what this story delivers]</p>
+<p><strong>Independent Test</strong>: [How to verify this story works on its own]</p>
+<h3>Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️</h3>
+<ul>
+<li>[ ] T018 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py</li>
+<li>[ ] T019 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py</li>
+</ul>
+<h3>Implementation for User Story 2</h3>
+<ul>
+<li>[ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py</li>
+<li>[ ] T021 [US2] Implement [Service] in src/services/[service].py</li>
+<li>[ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py</li>
+<li>[ ] T023 [US2] Integrate with User Story 1 components (if needed)</li>
+</ul>
+<p><strong>Checkpoint</strong>: At this point, User Stories 1 AND 2 should both work independently</p>
+<hr>
+<h2>Phase 5: User Story 3 - [Title] (Priority: P3)</h2>
+<p><strong>Goal</strong>: [Brief description of what this story delivers]</p>
+<p><strong>Independent Test</strong>: [How to verify this story works on its own]</p>
+<h3>Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️</h3>
+<ul>
+<li>[ ] T024 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py</li>
+<li>[ ] T025 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py</li>
+</ul>
+<h3>Implementation for User Story 3</h3>
+<ul>
+<li>[ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py</li>
+<li>[ ] T027 [US3] Implement [Service] in src/services/[service].py</li>
+<li>[ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py</li>
+</ul>
+<p><strong>Checkpoint</strong>: All user stories should now be independently functional</p>
+<hr>
+<p>[Add more user story phases as needed, following the same pattern]</p>
+<hr>
+<h2>Phase N: Polish &amp; Cross-Cutting Concerns</h2>
+<p><strong>Purpose</strong>: Improvements that affect multiple user stories</p>
+<ul>
+<li>[ ] TXXX [P] Documentation updates in docs/</li>
+<li>[ ] TXXX Code cleanup and refactoring</li>
+<li>[ ] TXXX Performance optimization across all stories</li>
+<li>[ ] TXXX [P] Additional unit tests (if requested) in tests/unit/</li>
+<li>[ ] TXXX Security hardening</li>
+<li>[ ] TXXX Run quickstart.md validation</li>
+</ul>
+<hr>
+<h2>Dependencies &amp; Execution Order</h2>
+<h3>Phase Dependencies</h3>
+<ul>
+<li><strong>Setup (Phase 1)</strong>: No dependencies - can start immediately</li>
+<li><strong>Foundational (Phase 2)</strong>: Depends on Setup completion - BLOCKS all user stories</li>
+<li><strong>User Stories (Phase 3+)</strong>: All depend on Foundational phase completion
+<ul>
+<li>User stories can then proceed in parallel (if staffed)</li>
+<li>Or sequentially in priority order (P1 → P2 → P3)</li>
+</ul>
+</li>
+<li><strong>Polish (Final Phase)</strong>: Depends on all desired user stories being complete</li>
+</ul>
+<h3>User Story Dependencies</h3>
+<ul>
+<li><strong>User Story 1 (P1)</strong>: Can start after Foundational (Phase 2) - No dependencies on other stories</li>
+<li><strong>User Story 2 (P2)</strong>: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable</li>
+<li><strong>User Story 3 (P3)</strong>: Can start after Foundational (Phase 2) - May integrate with US1/US2 but should be independently testable</li>
+</ul>
+<h3>Within Each User Story</h3>
+<ul>
+<li>Tests (if included) MUST be written and FAIL before implementation</li>
+<li>Models before services</li>
+<li>Services before endpoints</li>
+<li>Core implementation before integration</li>
+<li>Story complete before moving to next priority</li>
+</ul>
+<h3>Parallel Opportunities</h3>
+<ul>
+<li>All Setup tasks marked [P] can run in parallel</li>
+<li>All Foundational tasks marked [P] can run in parallel (within Phase 2)</li>
+<li>Once Foundational phase completes, all user stories can start in parallel (if team capacity allows)</li>
+<li>All tests for a user story marked [P] can run in parallel</li>
+<li>Models within a story marked [P] can run in parallel</li>
+<li>Different user stories can be worked on in parallel by different team members</li>
+</ul>
+<hr>
+<h2>Parallel Example: User Story 1</h2>
+<pre><code class="language-bash"># Launch all tests for User Story 1 together (if tests requested):
+Task: &quot;Contract test for [endpoint] in tests/contract/test_[name].py&quot;
+Task: &quot;Integration test for [user journey] in tests/integration/test_[name].py&quot;
+
+# Launch all models for User Story 1 together:
+Task: &quot;Create [Entity1] model in src/models/[entity1].py&quot;
+Task: &quot;Create [Entity2] model in src/models/[entity2].py&quot;
+</code></pre>
+<hr>
+<h2>Implementation Strategy</h2>
+<h3>MVP First (User Story 1 Only)</h3>
+<ol>
+<li>Complete Phase 1: Setup</li>
+<li>Complete Phase 2: Foundational (CRITICAL - blocks all stories)</li>
+<li>Complete Phase 3: User Story 1</li>
+<li><strong>STOP and VALIDATE</strong>: Test User Story 1 independently</li>
+<li>Deploy/demo if ready</li>
+</ol>
+<h3>Incremental Delivery</h3>
+<ol>
+<li>Complete Setup + Foundational → Foundation ready</li>
+<li>Add User Story 1 → Test independently → Deploy/Demo (MVP!)</li>
+<li>Add User Story 2 → Test independently → Deploy/Demo</li>
+<li>Add User Story 3 → Test independently → Deploy/Demo</li>
+<li>Each story adds value without breaking previous stories</li>
+</ol>
+<h3>Parallel Team Strategy</h3>
+<p>With multiple developers:</p>
+<ol>
+<li>Team completes Setup + Foundational together</li>
+<li>Once Foundational is done:
+<ul>
+<li>Developer A: User Story 1</li>
+<li>Developer B: User Story 2</li>
+<li>Developer C: User Story 3</li>
+</ul>
+</li>
+<li>Stories complete and integrate independently</li>
+</ol>
+<hr>
+<h2>Notes</h2>
+<ul>
+<li>[P] tasks = different files, no dependencies</li>
+<li>[Story] label maps task to specific user story for traceability</li>
+<li>Each user story should be independently completable and testable</li>
+<li>Verify tests fail before implementing</li>
+<li>Commit after each task or logical group</li>
+<li>Stop at any checkpoint to validate story independently</li>
+<li>Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence</li>
+</ul>
