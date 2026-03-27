@@ -6,9 +6,9 @@ module.exports = function (eleventyConfig) {
   });
 
   // src/assets/ → wwwroot/assets/
-  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // src/files/ → wwwroot/files/
-  eleventyConfig.addPassthroughCopy("src/files");
+  eleventyConfig.addPassthroughCopy({ "src/files": "files" });
 
   // お知らせコレクション（日付降順）
   eleventyConfig.addCollection("notices", function (collectionApi) {

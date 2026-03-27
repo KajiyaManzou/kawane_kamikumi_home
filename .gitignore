@@ -57,3 +57,6 @@ nunit-*.xml
 
 # Node.js
 node_modules/
+
+# Eleventy キャッシュ
+.cache/
