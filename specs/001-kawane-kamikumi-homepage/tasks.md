@@ -36,7 +36,7 @@
 - [x] T007 [P] ベースレイアウト `src/_includes/base.njk` を作成する（`<html lang="ja">`・ヘッダー「東川根上組 公式情報ページ」・フッター・CSS読み込み）
 - [x] T008 [P] `src/_data/config.js` を作成し Googleフォーム URL プレースホルダーを定義する
 - [x] T009 スタイルシート `wwwroot/assets/css/style.css` を作成する（モバイルファースト・本文16px以上・コントラスト比4.5:1以上・レスポンシブ 768px/1024px ブレークポイント・横スクロールなし）
-- [ ] T010 `npx eleventy --output=wwwroot` でビルドが成功することを確認し、`wwwroot/index.html` が生成されることを確認する
+- [x] T010 `npx eleventy --output=wwwroot` でビルドが成功することを確認し、`wwwroot/index.html` が生成されることを確認する
 
 **Checkpoint**: Eleventy ビルド成功 → localhost:8080 でベースレイアウトが表示される
 
