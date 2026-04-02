@@ -5,7 +5,7 @@ title: 回覧板一覧
 <div class="container">
   <section class="section">
     <h2 class="section-title">回覧板一覧</h2>
-    {% set circulars = collections.circulars | reverse %}
+    {% set circulars = collections.circulars %}
     {% if circulars and circulars.length > 0 %}
       <ul class="card-list">
         {% for item in circulars %}

@@ -7,15 +7,13 @@ title: トップページ
   {# --- お知らせ --- #}
   <section class="section">
     <h2 class="section-title">お知らせ</h2>
-    {% set notices = collections.notices | reverse %}
+    {% set notices = collections.notices %}
     {% if notices and notices.length > 0 %}
       <ul class="card-list">
-        {% for item in notices.slice(0, 5) %}
-          {% set notice = item %}
-          {% include "notice-card.njk" %}
-        {% endfor %}
+        {% set notice = notices[0] %}
+        {% set noticeCardUrl = "/archives/" %}
+        {% include "notice-card.njk" %}
       </ul>
-      <a class="archive-link" href="/archives/">過去のお知らせ →</a>
     {% else %}
       <p>現在お知らせはありません。</p>
     {% endif %}
@@ -24,13 +22,13 @@ title: トップページ
   {# --- 回覧板 --- #}
   <section class="section">
     <h2 class="section-title">回覧板</h2>
-    {% set circulars = collections.circulars | reverse %}
+    {% set circulars = collections.circulars %}
     {% if circulars and circulars.length > 0 %}
       {% set circular = circulars[0] %}
+      {% set circularCardUrl = "/circulars/" %}
       <ul class="card-list">
         {% include "circular-card.njk" %}
       </ul>
-      <a class="archive-link" href="/circulars/">過去の回覧板 →</a>
     {% else %}
       <p>現在回覧板はありません。</p>
     {% endif %}

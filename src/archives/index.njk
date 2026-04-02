@@ -5,7 +5,7 @@ title: お知らせアーカイブ
 <div class="container">
   <section class="section">
     <h2 class="section-title">過去のお知らせ</h2>
-    {% set notices = collections.notices | reverse %}
+    {% set notices = collections.notices %}
     {% if notices and notices.length > 0 %}
       <ul class="card-list">
         {% for item in notices %}
