@@ -7,7 +7,7 @@ title: 回覧板一覧
     <h2 class="section-title">回覧板一覧</h2>
     {% set circulars = collections.circulars %}
     {% if circulars and circulars.length > 0 %}
-      <ul class="card-list">
+      <ul class="card-list archive-card-list">
         {% for item in circulars %}
           {% set circular = item %}
           {% include "circular-card.njk" %}
