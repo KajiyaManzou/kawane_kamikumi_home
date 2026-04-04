@@ -1,7 +1,7 @@
 {
   "name": "Static Web (nginx)",
   "image": "nginx:latest",
-  "forwardPorts": [8080],
+  "forwardPorts": ["8080:80"],
   "mounts": [
     "source=${localWorkspaceFolder}/wwwroot,target=/usr/share/nginx/html,type=bind"
   ],
@@ -11,3 +11,4 @@
   "postCreateCommand": "apt-get update && apt-get install -y git python3 python3-pip nodejs npm && pip3 install uv --break-system-packages && uv tool install specify-cli --from git+https://github.com/github/spec-kit.git && npm install -g @google/gemini-cli",
   "postStartCommand": "nginx"
 }
+

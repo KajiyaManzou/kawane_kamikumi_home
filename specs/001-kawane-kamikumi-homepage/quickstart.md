@@ -111,10 +111,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      CF_DEPLOY_HOOK_URL: ${{ secrets.CF_DEPLOY_HOOK_URL }}
     steps:
+      - name: Validate Cloudflare Pages Deploy Hook
+        run: |
+          if [ -z "$CF_DEPLOY_HOOK_URL" ]; then
+            echo "::error title=Missing CF_DEPLOY_HOOK_URL secret::Set the Cloudflare Pages deploy hook URL in GitHub Actions secrets before running this workflow."
+            exit 1
+          fi
+
       - name: Trigger Cloudflare Pages Deploy
         run: |
-          curl -X POST "${{ secrets.CF_DEPLOY_HOOK_URL }}"
+          curl --fail --silent --show-error -X POST "$CF_DEPLOY_HOOK_URL"
 ```
 
 `CF_DEPLOY_HOOK_URL` は GitHub Secrets に Cloudflare Pages のデプロイフック URL を設定する。
