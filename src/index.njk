@@ -24,11 +24,14 @@ title: トップページ
     <h2 class="section-title">回覧板</h2>
     {% set circulars = collections.circulars %}
     {% if circulars and circulars.length > 0 %}
-      {% set circular = circulars[0] %}
-      {% set circularCardUrl = "/circulars/" %}
-      <ul class="card-list">
-        {% include "circular-card.njk" %}
+      <ul class="news-list">
+        {% for item in circulars.slice(0, 3) %}
+          <li class="news-item">
+            <a class="news-link" href="{{ item.url }}">{{ item.data.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
+      <a class="archive-link" href="/circulars/">回覧板一覧へ</a>
     {% else %}
       <p>現在回覧板はありません。</p>
     {% endif %}
