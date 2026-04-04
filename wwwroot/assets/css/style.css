@@ -209,6 +209,20 @@ main {
   color: #555555;
 }
 
+/* --- トップページ回覧板一覧 --- */
+.circular-list {
+  list-style: none;
+}
+
+.circular-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.25rem 0;
+}
+
+.circular-item:last-child {
+  border-bottom: none;
+}
+
 /* --- 東海村ニュース --- */
 .news-list {
   list-style: none;

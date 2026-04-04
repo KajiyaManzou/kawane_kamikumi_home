@@ -24,9 +24,9 @@ title: トップページ
     <h2 class="section-title">回覧板</h2>
     {% set circulars = collections.circulars %}
     {% if circulars and circulars.length > 0 %}
-      <ul class="news-list">
+      <ul class="circular-list">
         {% for item in circulars.slice(0, 3) %}
-          <li class="news-item">
+          <li class="circular-item">
             <a class="news-link" href="{{ item.url }}">{{ item.data.title }}</a>
           </li>
         {% endfor %}
