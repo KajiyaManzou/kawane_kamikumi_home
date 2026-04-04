@@ -2,7 +2,12 @@ module.exports = function (eleventyConfig) {
   // 日本語日付フィルター（例: 2026年3月27日）
   eleventyConfig.addFilter("dateJa", function (date) {
     const d = new Date(date);
-    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+    return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
+  });
+
+  eleventyConfig.addFilter("dateMonthDayJa", function (date) {
+    const d = new Date(date);
+    return (d.getMonth() + 1) + "月" + d.getDate() + "日";
   });
 
   // src/assets/ → wwwroot/assets/

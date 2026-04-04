@@ -8,6 +8,9 @@ title: トップページ
     <h2 class="section-title">お知らせ</h2>
     {% set notices = collections.notices %}
     {% if notices and notices.length > 0 %}
+      <p class="section-updated">（{{ notices[0].date | dateMonthDayJa }}更新）</p>
+    {% endif %}
+    {% if notices and notices.length > 0 %}
       <ul class="circular-list">
         {% for item in notices.slice(0, 3) %}
           <li class="circular-item">
@@ -26,6 +29,9 @@ title: トップページ
   <section class="section">
     <h2 class="section-title">回覧板</h2>
     {% set circulars = collections.circulars %}
+    {% if circulars and circulars.length > 0 %}
+      <p class="section-updated">（{{ circulars[0].date | dateMonthDayJa }}更新）</p>
+    {% endif %}
     {% if circulars and circulars.length > 0 %}
       <ul class="circular-list">
         {% for item in circulars.slice(0, 3) %}
