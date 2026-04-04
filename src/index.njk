@@ -3,21 +3,24 @@ layout: base.njk
 title: トップページ
 ---
 <div class="container">
-
   {# --- お知らせ --- #}
   <section class="section">
     <h2 class="section-title">お知らせ</h2>
     {% set notices = collections.notices %}
     {% if notices and notices.length > 0 %}
-      <ul class="card-list">
-        {% set notice = notices[0] %}
-        {% set noticeCardUrl = "/archives/" %}
-        {% include "notice-card.njk" %}
+      <ul class="circular-list">
+        {% for item in notices.slice(0, 3) %}
+          <li class="circular-item">
+            <a class="news-link" href="{{ item.url }}">{{ item.data.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
+      <a class="archive-link" href="/archives/">お知らせ一覧へ</a>
     {% else %}
       <p>現在お知らせはありません。</p>
     {% endif %}
   </section>
+
 
   {# --- 回覧板 --- #}
   <section class="section">
