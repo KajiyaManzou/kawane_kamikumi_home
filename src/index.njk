@@ -5,11 +5,13 @@ title: トップページ
 <div class="container">
   {# --- お知らせ --- #}
   <section class="section">
-    <h2 class="section-title">お知らせ</h2>
-    {% set notices = collections.notices %}
-    {% if notices and notices.length > 0 %}
-      <p class="section-updated">（{{ notices[0].date | dateMonthDayJa }}更新）</p>
-    {% endif %}
+    <div class="section-heading">
+      <h2 class="section-title">お知らせ</h2>
+      {% set notices = collections.notices %}
+      {% if notices and notices.length > 0 %}
+        <p class="section-updated">{{ (notices[0].date | dateMonthDayJa) | replace("月", "/") | replace("日", "") }}更新</p>
+      {% endif %}
+    </div>
     {% if notices and notices.length > 0 %}
       <ul class="circular-list">
         {% for item in notices.slice(0, 3) %}
@@ -27,11 +29,13 @@ title: トップページ
 
   {# --- 回覧板 --- #}
   <section class="section">
-    <h2 class="section-title">回覧板</h2>
-    {% set circulars = collections.circulars %}
-    {% if circulars and circulars.length > 0 %}
-      <p class="section-updated">（{{ circulars[0].date | dateMonthDayJa }}更新）</p>
-    {% endif %}
+    <div class="section-heading">
+      <h2 class="section-title">回覧板</h2>
+      {% set circulars = collections.circulars %}
+      {% if circulars and circulars.length > 0 %}
+        <p class="section-updated">{{ (circulars[0].date | dateMonthDayJa) | replace("月", "/") | replace("日", "") }}更新</p>
+      {% endif %}
+    </div>
     {% if circulars and circulars.length > 0 %}
       <ul class="circular-list">
         {% for item in circulars.slice(0, 3) %}
@@ -49,10 +53,12 @@ title: トップページ
 
   {# --- 東海村ニュース --- #}
   <section class="section">
-    <h2 class="section-title">東海村からのお知らせ</h2>
-    {% if tokai_news.processedDateJa %}
-      <p class="section-updated">（{{ tokai_news.processedDateJa }}更新）</p>
-    {% endif %}
+    <div class="section-heading">
+      <h2 class="section-title">東海村からのお知らせ</h2>
+      {% if tokai_news.processedDateJa %}
+        <p class="section-updated">{{ tokai_news.processedDateJa | replace("月", "/") | replace("日", "") }}更新</p>
+      {% endif %}
+    </div>
     {% if tokai_news.items and tokai_news.items.length > 0 %}
       <ul class="news-list">
         {% for item in tokai_news.items %}

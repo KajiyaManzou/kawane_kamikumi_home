@@ -5,7 +5,7 @@ const RSS_URL = "https://www.vill.tokai.ibaraki.jp/cgi-bin/feed.php?siteNew=1";
 
 module.exports = async function () {
   const processedAt = new Date();
-  const processedDateJa = (processedAt.getMonth() + 1) + "月" + processedAt.getDate() + "日";
+  const processedDateJa = (processedAt.getMonth() + 1) + "/" + processedAt.getDate();
 
   try {
     const xml = await EleventyFetch(RSS_URL, {

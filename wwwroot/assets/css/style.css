@@ -106,11 +106,18 @@ main {
   margin-bottom: 2.5rem;
 }
 
-.section-updated {
-  font-size: calc(1.25rem / 3 * 2);  /* section-title の 2/3 ≈ 14px */
-  color: #555555;
-  margin-top: -1rem;
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.section-updated {
+  flex-shrink: 0;
+  font-size: calc(1.25rem / 3 * 2);
+  color: #555555;
 }
 
 .section-title {
@@ -119,7 +126,7 @@ main {
   color: #1a5276;
   border-left: 4px solid #1a5276;
   padding-left: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 /* --- お知らせ・回覧板カード --- */

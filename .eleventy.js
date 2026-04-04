@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateMonthDayJa", function (date) {
     const d = new Date(date);
-    return (d.getMonth() + 1) + "月" + d.getDate() + "日";
+    return (d.getMonth() + 1) + "/" + d.getDate();
   });
 
   // src/assets/ → wwwroot/assets/
