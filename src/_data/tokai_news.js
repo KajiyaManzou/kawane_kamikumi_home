@@ -5,7 +5,11 @@ const RSS_URL = "https://www.vill.tokai.ibaraki.jp/cgi-bin/feed.php?siteNew=1";
 
 module.exports = async function () {
   const processedAt = new Date();
-  const processedDateJa = (processedAt.getMonth() + 1) + "/" + processedAt.getDate();
+  const processedDateJa = new Intl.DateTimeFormat("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    month: "numeric",
+    day: "numeric",
+  }).format(processedAt);
 
   try {
     const xml = await EleventyFetch(RSS_URL, {

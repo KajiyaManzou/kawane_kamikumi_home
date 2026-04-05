@@ -44,15 +44,15 @@
 
 ## Phase 3: User Story 1 — お知らせ・回覧板の閲覧 (Priority: P1) 🎯 MVP
 
-**Goal**: 住民がトップページで最新5件のお知らせと最新1件の回覧板をPDFリンク付きで確認できる
+**Goal**: 住民がトップページで最新3件のお知らせと最新3件の回覧板を一覧で確認できる
 
-**Independent Test**: `npx eleventy --output=wwwroot` 後に `http://localhost:8080` を開き、お知らせ一覧5件・回覧板1件・PDFリンクが表示されることを確認。アーカイブページ `/archives/`・回覧板一覧 `/circulars/` が表示されることを確認。
+**Independent Test**: `npx eleventy --output=wwwroot` 後に `http://localhost:8080` を開き、お知らせ一覧3件・回覧板一覧3件が表示されることを確認。アーカイブページ `/archives/`・回覧板一覧 `/circulars/` が表示されることを確認。
 
 ### Implementation for User Story 1
 
 - [x] T011 [P] [US1] お知らせカードコンポーネント `src/_includes/notice-card.njk` を作成する（日付・タイトル・PDFリンク表示）
 - [x] T012 [P] [US1] 回覧板カードコンポーネント `src/_includes/circular-card.njk` を作成する（日付・タイトル・PDFリンク表示）
-- [x] T013 [US1] トップページテンプレート `src/index.njk` を作成する（お知らせ最新5件セクション・回覧板最新1件セクション・「過去のお知らせ →」「過去の回覧板 →」リンク）
+- [x] T013 [US1] トップページテンプレート `src/index.njk` を作成する（お知らせ最新3件一覧セクション・回覧板最新3件一覧セクション・「お知らせ一覧へ」「回覧板一覧へ」リンク）
 - [x] T014 [US1] お知らせアーカイブページ `src/archives/index.njk` を作成する（全お知らせを日付降順で一覧表示）
 - [x] T015 [US1] 回覧板一覧ページ `src/circulars/index.njk` を作成する（全回覧板を日付降順で一覧表示）
 - [x] T016 [P] [US1] サンプルお知らせ Markdown ファイルを作成する `content/notices/2026-03-27-spring-festival.md`（frontmatter: title/date/pdf）
@@ -60,7 +60,7 @@
 - [x] T018 [US1] Eleventy コレクション設定を `.eleventy.js` に追加する（notices コレクション・circulars コレクション、日付降順ソート）
 - [x] T019 [US1] 既存の手書き `wwwroot/index.html` を削除または移動し、Eleventy 生成版に置き換えることを確認する
 
-**Checkpoint**: US1 完了 — `http://localhost:8080` でお知らせ5件・回覧板1件・アーカイブリンクが正常表示される
+**Checkpoint**: US1 完了 — `http://localhost:8080` でお知らせ3件・回覧板3件・アーカイブリンクが正常表示される
 
 ---
 
