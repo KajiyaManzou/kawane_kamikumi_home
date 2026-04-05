@@ -1,6 +1,11 @@
 {
   "name": "Static Web (nginx)",
   "image": "nginx:latest",
+  "runArgs": [
+     "--cap-add=SYS_ADMIN",
+     "--security-opt", "seccomp=unconfined",
+     "--security-opt", "apparmor=unconfined"
+  ],
   "forwardPorts": ["8080:80"],
   "mounts": [
     "source=${localWorkspaceFolder}/wwwroot,target=/usr/share/nginx/html,type=bind"
