@@ -179,6 +179,24 @@ main {
   margin-left: 1em;
 }
 
+.content-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.content-body th,
+.content-body td {
+  padding: 0.5rem 0.25rem;
+  text-align: left;
+  border-bottom: 1px solid #ccd6e0;
+}
+
+.content-body thead th {
+  border-top: 1px solid #ccd6e0;
+  border-bottom: 2px solid #aebdcb;
+}
+
 .card-date {
   font-size: 0.875rem;   /* 14px — 補足情報のみ小さくする */
   color: #555555;        /* コントラスト比 4.6:1 以上 */
