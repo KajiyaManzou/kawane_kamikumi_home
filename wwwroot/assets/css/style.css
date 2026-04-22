@@ -158,6 +158,27 @@ main {
   line-height: 1.9;
 }
 
+.content-body > * + * {
+  margin-top: 1rem;
+}
+
+.content-body ul,
+.content-body ol {
+  padding-left: 1em;
+  margin-left: 1em;
+}
+
+.content-body li + li {
+  margin-top: 0.25rem;
+}
+
+.content-body li > ul,
+.content-body li > ol {
+  margin-top: 0.25rem;
+  padding-left: 1em;
+  margin-left: 1em;
+}
+
 .card-date {
   font-size: 0.875rem;   /* 14px — 補足情報のみ小さくする */
   color: #555555;        /* コントラスト比 4.6:1 以上 */

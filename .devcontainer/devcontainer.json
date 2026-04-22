@@ -8,12 +8,16 @@
   ],
   "forwardPorts": ["8080:80"],
   "mounts": [
-    "source=${localWorkspaceFolder}/wwwroot,target=/usr/share/nginx/html,type=bind"
+    "source=${localWorkspaceFolder}/wwwroot,target=/usr/share/nginx/html,type=bind",
+    "source=${localEnv:HOME}/.claude,target=/root/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.claude.json,target=/root/.claude.json,type=bind,consistency=cached"
   ],
   "remoteEnv": {
-    "PATH": "/root/.local/bin:${containerEnv:PATH}"
+    "PATH": "/root/.local/bin:${containerEnv:PATH}",
+    "TZ": "Asia/Tokyo",
+    "CLAUDE_CODE_OAUTH_TOKEN": "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"
   },
-  "postCreateCommand": "apt-get update && apt-get install -y git python3 python3-pip nodejs npm && pip3 install uv --break-system-packages && uv tool install specify-cli --from git+https://github.com/github/spec-kit.git && npm install -g @google/gemini-cli",
+  "postCreateCommand": "apt-get update && apt-get install -y git python3 python3-pip nodejs npm && pip3 install uv --break-system-packages && uv tool install specify-cli --from git+https://github.com/github/spec-kit.git && npm install -g @google/gemini-cli && npm install -g @anthropic-ai/claude-code",
   "postStartCommand": "nginx"
 }
 
