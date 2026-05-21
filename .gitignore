@@ -60,3 +60,9 @@ node_modules/
 
 # Eleventy キャッシュ
 .cache/
+
+.agents/
+.claude/
+.devcontainer/
+.gemini/
+.specify/
